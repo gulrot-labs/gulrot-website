@@ -1,9 +1,6 @@
-# Start from the official nginx image
-FROM nginx:latest
+FROM nginx:alpine
 
-# Copy your custom HTML files into the image
-COPY ./config/nginx.conf /usr/share/nginx/
+COPY ./conf/default.conf /etc/nginx/conf.d/default.conf
 COPY ./public/ /usr/share/nginx/html/
 
-# Expose port 80 (optional, since nginx image already exposes it)
 EXPOSE 80
